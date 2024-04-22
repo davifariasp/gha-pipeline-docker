@@ -8,7 +8,7 @@ WORKDIR /api
 COPY . .
 
 # Remova o diretório node_modules (se já existir)
-RUN rm -rf node_modules || true
+RUN rm -rf node_modules 
 
 # Instale as dependências do projeto
 RUN npm install
