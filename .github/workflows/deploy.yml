@@ -33,18 +33,18 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+
     - name: Rebase to directory Gha Pipeline Docker
       run: cd ~ && cd gha-pipeline-docker
 
-    - uses: actions/checkout@v2
     - name: Get changes on repository
       run: git pull origin main
 
     - name: Stop containers
-      run: docker compose docker stop || true
+      run: docker compose stop || true
 
     - name: Down containers
-      run: docker compose docker down || true
+      run: docker compose down || true
 
     - name: Remove old docker images API and NGINX
       run: docker rmi -f api-estudo && docker rmi -f nginx-estudo || true
