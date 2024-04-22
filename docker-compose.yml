@@ -5,7 +5,7 @@ services:
     build: ./api
     restart: always
     ports:
-      - 3001:3001
+      - 3003:3003
 
   nginx:
     container_name: nginx-estudo
