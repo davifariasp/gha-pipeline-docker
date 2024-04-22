@@ -1,0 +1,21 @@
+services:
+  api:
+    container_name: api-estudo
+    image: api-estudo
+    build: ./api
+    restart: always
+    ports:
+      - 3001:3001
+
+  nginx:
+    container_name: nginx-estudo
+    image: nginx-estudo
+    build: ./nginx
+    ports:
+      - 80:80
+    depends_on:
+      - api
+
+networks:
+  default:
+    name: network-estudo
