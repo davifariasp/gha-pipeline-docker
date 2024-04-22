@@ -27,27 +27,27 @@ jobs:
     - run: npm ci
     - run: npm run test
 
-#   ## Deploy (CD)
-#   build:
-#     runs-on: self-hosted
+  ## Deploy (CD)
+  build:
+    runs-on: self-hosted
 
-#     steps:
-#     - uses: actions/checkout@v2
-#     - name: Rebase to directory Neuron5
-#       run: cd ~ && cd gha-pipeline-docker
+    steps:
+    - uses: actions/checkout@v2
+    - name: Rebase to directory Neuron5
+      run: cd ~ && cd gha-pipeline-docker
 
-#     - uses: actions/checkout@v2
-#     - name: Get changes on repository
-#       run: git pull origin main
+    - uses: actions/checkout@v2
+    - name: Get changes on repository
+      run: git pull origin main
 
-#     - name: Stop containers
-#       run: docker compose docker stop || true
+    - name: Stop containers
+      run: docker compose docker stop || true
 
-#     - name: Down containers
-#       run: docker compose docker down || true
+    - name: Down containers
+      run: docker compose docker down || true
 
-#     - name: Remove old docker images API and NGINX
-#       run: docker rmi -f api-estudo && docker rmi -f nginx-estudo || true
+    - name: Remove old docker images API and NGINX
+      run: docker rmi -f api-estudo && docker rmi -f nginx-estudo || true
 
-#     - name: Build Docker Container
-#       run: docker compose up -d
+    - name: Build Docker Container
+      run: docker compose up -d
