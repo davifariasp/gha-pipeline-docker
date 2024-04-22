@@ -33,7 +33,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Rebase to directory Neuron5
+    - name: Rebase to directory Gha Pipeline Docker
       run: cd ~ && cd gha-pipeline-docker
 
     - uses: actions/checkout@v2
