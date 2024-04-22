@@ -1,0 +1,53 @@
+# name: Deploy
+
+# on:
+#   push:
+#     branches: 
+#       - main
+
+# jobs:
+#   ## Test (CI)
+#   test:
+#     defaults:
+#       run:
+#         working-directory: ./api
+    
+#     runs-on: ubuntu-20.04
+
+#     strategy:
+#       matrix:
+#         node-version: [20.x]
+
+#     steps:
+#     - uses: actions/checkout@v2
+#     - name: Use Node.js ${{ matrix.node-version }}
+#       uses: actions/setup-node@v2
+#       with:
+#         node-version: ${{ matrix.node-version }}
+#     - run: npm ci
+#     - run: npm run test
+
+#   ## Deploy (CD)
+#   build:
+#     runs-on: self-hosted
+
+#     steps:
+#     - uses: actions/checkout@v2
+#     - name: Rebase to directory Neuron5
+#       run: cd ~ && cd neuron5
+
+#     - uses: actions/checkout@v2
+#     - name: Get changes on repository
+#       run: git pull origin main
+
+#     - name: Stop containers
+#       run: docker compose -f docker-compose.yml stop || true
+
+#     - name: Down containers
+#       run: docker compose -f docker-compose.yml down || true
+
+#     - name: Remove old docker images API and NGINX
+#       run: docker rmi -f api-neuron5 && docker rmi -f nginx-neuron5 || true
+
+#     - name: Build Docker Container
+#       run: docker compose up -d

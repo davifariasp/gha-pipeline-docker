@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "npx nodemon src/server.ts --watch 'src/' -e ts",
     "build": "npx tsc",
-    "compile": "npx tsc",
+    "test": "jest",
     "start": "node ./public/server.js"
   },
   "author": "",
@@ -14,12 +14,17 @@
   "dependencies": {
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "supertest": "^6.3.4"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.24.4",
+    "@babel/preset-typescript": "^7.24.1",
     "@types/dotenv": "^8.2.0",
     "@types/express": "^4.17.21",
+    "@types/jest": "^29.5.12",
     "@types/morgan": "^1.9.9",
+    "jest": "^29.7.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.4.5"
   }
