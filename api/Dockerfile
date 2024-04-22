@@ -16,8 +16,5 @@ RUN npm install
 # Execute o comando de build para compilar o código TypeScript
 RUN npm run build
 
-# Exponha a porta 3001 (se o seu aplicativo Node.js estiver escutando nessa porta)
-EXPOSE 3001
-
 # Comando para iniciar o servidor (neste exemplo, assumindo que você está usando o comando 'npm start')
 CMD ["npm", "start"]
