@@ -9,7 +9,7 @@ async function create(req: Request, res: Response) {
 
     return res.status(201).json({ message: "Usuário criada com sucesso!" });
   } catch (error) {
-    console.error("Erro ao criar cliente:", error);
+
     return res.status(500).json({ message: "Erro ao criar usuário." });
   }
 }
@@ -33,7 +33,7 @@ async function login(req: Request, res: Response) {
       throw new Error("Usuário não encontrado");
     }
   } catch (error) {
-    console.error("Erro ao criar cliente:", error);
+
     return res.status(500).json({ message: "Erro ao realizar login." });
   }
 }
@@ -42,7 +42,7 @@ async function list(req: Request, res: Response) {
   try {
     return res.status(201).json(listUser);
   } catch (error) {
-    console.error("Erro ao listar clientes:", error);
+
     return res.status(500).json({ message: "Erro ao listar usuários." });
   }
 }
