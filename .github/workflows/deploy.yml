@@ -30,7 +30,7 @@ jobs:
   ## Deploy (CD)
   build:
     runs-on: self-hosted
-    depends-on: test
+    depends: test
 
     steps:
     - uses: actions/checkout@v2
